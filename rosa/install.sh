@@ -61,10 +61,10 @@ if [[ ! $(which rosa) ]]; then
         printf "${BLUE}Installing the 'rosa' CLI.${CLEAR}\n"
         if [[ "$OS" == "darwin" ]]; then
             # Mac
-            curl "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/rosa/latest/rosa-macosx.tar.gz" -o "$PWD/vendor/rosa.tar.gz" -s;
+            curl -kL "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/rosa/latest/rosa-macosx.tar.gz" -o "$PWD/vendor/rosa.tar.gz" -s;
         elif [[ "$OS" == "linux" ]]; then
             # Linux
-            curl "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/rosa/latest/rosa-linux.tar.gz" -o "$PWD/vendor/rosa.tar.gz" -s;
+            curl -kL "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/rosa/latest/rosa-linux.tar.gz" -o "$PWD/vendor/rosa.tar.gz" -s;
         else
             printf "${RED}Unsupported OS. Exiting${CLEAR}\n"
             exit 1
